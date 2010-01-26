@@ -32,7 +32,8 @@ find a partner easily for your class projects
 * implementation
 ** datas, sql tables
 *** user
-    name(nick)
+    name(nick, login)
+    real name
     eid(optional)
     email
     phone#(optional)
@@ -65,6 +66,18 @@ find a partner easily for your class projects
     a student can view all previous and current partners' contact information
     a student can view other students' availability
 
-* todos
+** implementation how-tos
+   how to do ACL for php+mysql?
+   how to send/queue email sending
+
+* thinkings and todos
   integrade with ut eid account login or openid login
-  how to do ACL for php+mysql?
+** why not use trac?
+   pros
+      trac components as projects
+      trac has perfect ACL and email settings
+   cons
+      trac can't track pair information
+      trac can't set due date or valid date for components and targets
+          timeline?
+
