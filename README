@@ -1,0 +1,62 @@
+pairup project
+find a partner easily for your class projects
+
+* features
+  integrade gravatar
+  privacy control, protect user information, phone# and email address
+  show project page
+  show all open ticket for a project
+
+* use case
+** as a student,
+   join a course, meaning I'm taking this course
+   open a ticket, look for a partner
+   comment on existing ticket, both the owner and other user can leave comments
+   apply for partnership
+   close a ticket, either commit accept an application or valid date was past
+   
+** as a professor,
+   create a course
+   create a project, set/edit deadline for a project
+   show isolates
+   show all pairs/groups
+  
+* implementation
+** datas, sql tables
+*** user
+    name(nick)
+    eid(optional)
+    email
+    phone#(optional)
+    set availability(optional), which time you are free
+*** cousre
+    id, eg. "cs 373 spring10"
+    name(optional), eg. "Software Engineering-w"
+    instructor
+    valid date: forever, before <Date>
+*** project
+    course
+    due date
+    max member count
+*** ticket
+    owner
+    project
+    valid date: forever, before <Date>
+    status: open, apply-available, complete, closed
+    a list of comments
+
+** acl, access control
+*** role instructor
+    an instructor can see the user's contact information if the user has joined
+    his/her course.
+    an instructor can create project
+    an instructor can delete empty project, no ref yet.
+    an instructor can edit project due date
+*** role student
+    a student can open a ticket
+    a student can view all previous and current partners' contact information
+    a student can view other students' availability
+
+* todos
+  integrade with ut eid account login or openid login
+  
