@@ -6,21 +6,29 @@ find a partner easily for your class projects
   privacy control, protect user information, phone# and email address
   show project page
   show all open ticket for a project
+  send email when somebody comment or apply for your ticket
 
 * use case
 ** as a student,
    join a course, meaning I'm taking this course
-   open a ticket, look for a partner
+   show projects which is open
+   hl show projects which is open and you haven't got a partner/group
+   show open tickets for all courses I'm taking and I haven't got a partnership yet
+   open a ticket for a project, look for a partner
    comment on existing ticket, both the owner and other user can leave comments
-   apply for partnership
-   close a ticket, either commit accept an application or valid date was past
-   
+   apply for partnership in a open ticket
+   close a ticket, either by accept an application
+   ticket will be closed automatically when valid date has past
+
 ** as a professor,
    create a course
    create a project, set/edit deadline for a project
-   show isolates
+   mark project as open/active
+   mark project as closed
    show all pairs/groups
-  
+   show isolates
+   show all open tickets
+
 * implementation
 ** datas, sql tables
 *** user
@@ -59,4 +67,4 @@ find a partner easily for your class projects
 
 * todos
   integrade with ut eid account login or openid login
-  
+  how to do ACL for php+mysql?
