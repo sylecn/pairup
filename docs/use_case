@@ -1,0 +1,54 @@
+* as an unregistered user, I want to register.
+  system check user privi, if already login, ask the user to logout before
+  continuing.
+  
+  I input user id, real name, email, availability
+  system check the user id is available
+  if it is not, go back and let the user pick another id
+  system add user to db
+  system login for the user
+  system show register is successful
+** [optional]
+   on the same page, provide useful info (links) to the user:
+   as instructor
+   create a course
+
+   as student
+   join a class
+   create a ticket
+
+* as an instructor, I want to create a course
+  system check you have the instructor role. if not, show error and stop.
+
+  I input shortname, longname, semester (system calculate and provide
+  current, next and next of next as radio option), unique, admins, instructor
+  (default to the realname of current user), last for (options: semester, one
+  year, forever)
+
+  system add course to db
+  system show successful message and return to instructor user page.
+
+* as a student, I want to create a ticket
+  //TODO
+  // avail (options, my usual avail "MWF ...", set avail for this ticket)
+  
+* as a student, I apply for a open ticket
+
+* as a student, I accept a group application
+  I click on "accept".
+  system add that user to my group, a.k.a update group_member table to include
+  that user.
+  system close all that user's ticket for this project, see the related use case
+  add update msg for me, "user [foo] joined my group for [CS 373 SWE] [proj1]"
+  . "my group" is clickable, links to show ticket page
+  . course short name links to course page
+  . project name links to project page
+
+* as a student or system, close a ticket
+  remove all pending apply from group_member
+  update last user info to incl. "ticket [12345] is closed. you are removed from the apply list."
+  mark that ticket as "closed"
+
+* as a student, I got accepted by a ticket owner  
+  
+* as a student, I mark my ticket as "reopen"

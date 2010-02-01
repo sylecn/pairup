@@ -1,0 +1,64 @@
+* Data descriptions
+  data used in the project
+  
+* data as object
+*** user
+    id, used to login
+    real name
+    eid(optional)
+    email
+    set availability(optional), which time you are free
+    roles, a set of roles you play, "{student, ta}" "instructor"
+**** user extended, all info is optional, store in another table
+     phone#
+     facebook
+     OS
+     editor
+     known programming languages
+     birth country
+
+*** course
+    shortname, "CS 373 SWE"
+    longname, "CS 373 Software Engineering-W"
+    semester, "Spring 10"
+    unique, "54305"
+    owner, the user who created this course entry
+    admins, a list of users who can update course info, maybe ta's
+    instructor, "Glenn Downing"
+    valid date: forever, before <Date>
+*** project
+    name, "proj1" "Lab1"
+    course, which course it belongs to
+    due date
+    max group member count, for pairs this should be 2
+*** ticket, a ticket is used to form a group and communicate in a group
+    owner
+    project
+    members, a list of members (users) in this group
+    valid date: forever, before <Date>
+    status: open, working, done, closed, reopen
+    . open    waiting for applies
+    . working no applies allowed, this group is working on the project
+    . done    the project is done in this group
+    . closed  no applies allowed, this ticket is closed
+    . reopen  same as open
+    a list of comments
+
+* data as sql table, part 1, basic tables
+* data as sql table, part 2, relations, references, and so on
+  add an auto increment uid (unique id) field for most tables
+
+  [role]
+  uid
+  name, "student" "instructor" "ta"
+
+  [group_member]
+  uid
+  ticket_uid
+  member_uid
+  pending, boolean, if applying but not AC yet, this is true
+
+  [user_last_updates]
+  date, the date that info is added
+  message, the message
+  shown, boolean, whether the info is shown to the user

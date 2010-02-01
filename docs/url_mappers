@@ -1,0 +1,15 @@
+* ticket/show/[ticket_uid]
+  pre-condition:
+  a registered user
+  user is in that course
+
+  what:
+  show that ticket
+
+* ticket/opentickets/[project_uid]
+
+* user/show/[id]
+  what:
+  show user page, either public user page or "My User Page"
+
+* 

@@ -1,26 +1,28 @@
 pairup project
 find a partner easily for your class projects
 
-* features
+* features (big picture)
   integrade gravatar
   privacy control, protect user information, phone# and email address
   show project page
   show all open ticket for a project
   send email when somebody comment or apply for your ticket
 
-* use case
+* functionality (some detail)
+  see also detailed use case in docs/use_case (very detailed)
 ** as a student,
    join a course, meaning I'm taking this course
    show projects which is open
-   hl show projects which is open and you haven't got a partner/group
+   hl projects which is open and you haven't got a partner/group
    show open tickets for all courses I'm taking and I haven't got a partnership yet
    open a ticket for a project, look for a partner
-   comment on existing ticket, both the owner and other user can leave comments
+   comment on existing ticket, both the owner and other users can leave comments
    apply for partnership in a open ticket
    close a ticket, either by accept an application
    ticket will be closed automatically when valid date has past
+   add comments and attachments for a existing project
 
-** as a professor,
+** as a instructor,
    create a course
    create a project, set/edit deadline for a project
    mark project as open/active
@@ -29,31 +31,11 @@ find a partner easily for your class projects
    show isolates
    show all open tickets
 
-* implementation
-** datas, sql tables
-*** user
-    name(nick, login)
-    real name
-    eid(optional)
-    email
-    phone#(optional)
-    set availability(optional), which time you are free
-*** cousre
-    id, eg. "cs 373 spring10"
-    name(optional), eg. "Software Engineering-w"
-    instructor
-    valid date: forever, before <Date>
-*** project
-    course
-    due date
-    max member count
-*** ticket
-    owner
-    project
-    valid date: forever, before <Date>
-    status: open, apply-available, complete, closed
-    a list of comments
+** as a user(any type),
+   comment on existing ticket
+   add attachments to ticket just like a BTS system.
 
+* implementation
 ** acl, access control
 *** role instructor
     an instructor can see the user's contact information if the user has joined
@@ -72,6 +54,8 @@ find a partner easily for your class projects
 
 * thinkings and todos
   integrade with ut eid account login or openid login
+  integrade with ut unique id for class
+  should it be more like wiki (open-access) or controlled (clear restriction)?
 ** why not use trac?
    pros
       trac components as projects

@@ -1,0 +1,123 @@
+conventions used in this file
+<foo>  there is a separate entry for foo, <foo> reference to that entry
+[foo]  parameters
+"foo"  example data string
+
+* general, overall UI guideline
+** system show instructor id with a different color
+   instructor id color: lime
+   student id color: default(black)
+
+   so students can see which course is create by a instructor and which is
+   created by normal user.
+* ticket page
+  
+* open tickets
+  list open or reopen tickets.
+  whether show the apply column depends on user role and whether user is in
+  the course.
+** pre-condition
+   user is in the course. either the instructor, or ta, or a student that is
+   taking the course.
+** what
+   show open tickets
+   if user is student, also show options to apply.
+** open tickets for pair project
+   "cs372_OS_lab2"
+   | apply    | creator | member | creator avail                             | notes |
+   |----------+---------+--------+-------------------------------------------+-------|
+   | checkbox | rainy   | 1/2    | MWF 9-12am 2-5pm TTH 1:00-3:30pm weekends |       |
+   |----------+---------+--------+-------------------------------------------+-------|
+   |          |         |        |                                           |       |
+** open tickets for group project
+   "cs373_SWE_proj4"
+   | apply    | creator | member | creator avail                             | notes |
+   |----------+---------+--------+-------------------------------------------+-------|
+   | checkbox | rainy   | 2/4    | MWF 9-12am 2-5pm TTH 1:00-3:30pm weekends |       |
+   |----------+---------+--------+-------------------------------------------+-------|
+   |          |         |        |                                           |       |
+   
+   2/4 is clickable and links to ticket page, which contains all members in that
+   group.
+   each line can expand (in the same page), and show all members and their
+   avail below the line.
+   for example, the above example expands to
+   | member | avail                                     |
+   |--------+-------------------------------------------|
+   | rainy  | MWF 9-12am 2-5pm TTH 1:00-3:30pm weekends |
+   | john   | MWF 2-5pm TTH 2-5pm weekends              |
+
+* user page
+** user page, instructor, public page
+   //TODO
+
+** user page, instructor, my user page
+   shows the following info
+
+   my courses: (I'm the owner or one of admin)
+
+   my open projects: (all projects belong to my courses)
+
+** user page, student, public page
+   //TODO
+   
+** user page, student, my user page
+*** my projects: (active projects)
+   | course       | project   | due date      | my status                                              |
+   |--------------+-----------+---------------+--------------------------------------------------------|
+   | shortname    | proj name |               | "not started" "waiting for partner" "working in group" |
+   | "CS 373 SWE" | "proj 2"  | Feb 7 11:00pm |  not started (open tickets: 4)                         | 
+
+**** my status
+***** "not started (open tickets: 4)"
+      move on "open tickets: 4", show alt "show open tickets", click on it show
+      open tickets for that project
+***** "waiting for partner (applying users: 2, open tickets: 1)"
+      move on "applying users: 2", show alt "show ticket", click on it show
+      that ticket.
+***** "working in group (show ticket)"
+      click on "show ticket" show the ticket which I'm in. Either the one I
+      created or the one I joined.
+*** my tickets: (open tickets)
+    | project | status | last update info           |
+    |---------+--------+----------------------------|
+    |         |        | the summary of last change |
+    last update info can be
+    "foo" is applying
+    "foo" joined
+    "mark as complete"
+    "mark as closed"
+    //TODO
+
+* project page
+  shows the following info:
+  project name
+  course
+  due date
+  max group member count
+  project description, requirements and turnin instructions
+
+  [downing] is the instructor, [jerry], ... is ta
+
+  "59" students involved for this project
+  [foo], [bar], [foobar], ...
+
+  students working on this project: "30/59"
+  "5" students still want a partner
+  [foobar], ...
+
+  open tickets:
+  <open tickets>
+  
+  group progress for this project:
+  . the professor can see how many has finished the project.
+  | group | members                    | status  |
+  |-------+----------------------------+---------|
+  | index | all member ids in a ticket |         |
+  |     1 | rainy john                 | working |
+  |     2 | foo bar                    | done    |
+  . index is generated for each query in ascent order generated from 1
+    not from db
+  . sort by ticket status
+  .. use different bg color for working (aqua/cyan) and done (lime)
+  . user id is clickable and links to user page
