@@ -18,7 +18,7 @@
    create a ticket
 
 * as an instructor, I want to create a course
-  system check you have the instructor role. if not, show error and stop.
+  system check you have the instructor role. if not, show_error_and_stop.
 
   I input shortname, longname, semester (system calculate and provide
   current, next and next of next as radio option), unique, admins, instructor
@@ -29,8 +29,17 @@
   system show successful message and return to instructor user page.
 
 * as a student, I want to create a ticket
-  //TODO
-  // avail (options, my usual avail "MWF ...", set avail for this ticket)
+  I click on "create a ticket" in my projects table, or
+  I click on "create a ticket" in project page
+  
+  system check you have the student role. if not, show_error_and_stop.
+  
+  system show set avail for this ticket, give radio option
+  "set avail to my usual avail "MWF ..."
+  "set avail for this ticket: [input text box]"
+
+  system fill-in other fields automatically, and insert ticket to db.
+  system show failure on error or go to ticket page and show success message.
   
 * as a student, I apply for a open ticket
 

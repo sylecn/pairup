@@ -1,10 +1,5 @@
 * ticket/show/[ticket_uid]
-  pre-condition:
-  a registered user
-  user is in that course
-
-  what:
-  show that ticket
+  see <UI: ticket page>
 
 * ticket/opentickets/[project_uid]
 
@@ -12,4 +7,4 @@
   what:
   show user page, either public user page or "My User Page"
 
-* 
+* ticket/create/[project_uid]

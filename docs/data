@@ -32,8 +32,10 @@
     due date
     max group member count, for pairs this should be 2
 *** ticket, a ticket is used to form a group and communicate in a group
+    date
     owner
     project
+    avail, owner's availability
     members, a list of members (users) in this group
     valid date: forever, before <Date>
     status: open, working, done, closed, reopen

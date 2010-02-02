@@ -10,10 +10,26 @@ conventions used in this file
 
    so students can see which course is create by a instructor and which is
    created by normal user.
+
 * ticket page
-  
+  show one ticket
+** pre-condition
+   user is registered, or error, "You need to register and join a course to
+   view tickets."
+   . register links to "sign up" page
+   
+   user is in that course, or error, "You are not involved in this
+   project, join course [cs372 swe] before you view tickets."
+** what
+   ticket [12345] created by [foo] for [cs372 swe], [proj2]
+   [foo] is available on ["MWF..."]
+   ticket status: [open|working|done|closed|reopen]
+   . show alt message for each status. see <data: ticket>
+   members in this group:
+   see <UI: open tickets for group project, members>
+   
 * open tickets
-  list open or reopen tickets.
+  show tickets that are open or reopen.
   whether show the apply column depends on user role and whether user is in
   the course.
 ** pre-condition
@@ -21,10 +37,12 @@ conventions used in this file
    taking the course.
 ** what
    show open tickets
-   if user is student, also show options to apply.
+   
+   if user is student, show options(links) to create a new ticket and to
+   apply membership for an existing ticket.
 ** open tickets for pair project
    "cs372_OS_lab2"
-   | apply    | creator | member | creator avail                             | notes |
+   | apply    | creator | member | avail                                     | notes |
    |----------+---------+--------+-------------------------------------------+-------|
    | checkbox | rainy   | 1/2    | MWF 9-12am 2-5pm TTH 1:00-3:30pm weekends |       |
    |----------+---------+--------+-------------------------------------------+-------|
@@ -72,6 +90,9 @@ conventions used in this file
 ***** "not started (open tickets: 4)"
       move on "open tickets: 4", show alt "show open tickets", click on it show
       open tickets for that project
+***** "not started (no open tickets. create a ticket)"
+      click on "create a ticket" creates a ticket for that project.
+      see <use_case: as a student, I want to create a ticket>
 ***** "waiting for partner (applying users: 2, open tickets: 1)"
       move on "applying users: 2", show alt "show ticket", click on it show
       that ticket.
@@ -83,11 +104,10 @@ conventions used in this file
     |---------+--------+----------------------------|
     |         |        | the summary of last change |
     last update info can be
-    "foo" is applying
-    "foo" joined
-    "mark as complete"
-    "mark as closed"
-    //TODO
+    "foo" is willing to join you
+    "foo" joined you
+    "new ticket"
+    "ticket is marked as [working|done|closed|reopen]"
 
 * project page
   shows the following info:
@@ -107,7 +127,7 @@ conventions used in this file
   [foobar], ...
 
   open tickets:
-  <open tickets>
+  <UI: open tickets>
   
   group progress for this project:
   . the professor can see how many has finished the project.

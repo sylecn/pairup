@@ -1,0 +1,10 @@
+* implementation how-tos
+** how to do ACL for php+mysql?						:low:
+** how to send/queue email sending
+** how to do ajax show nice update message
+   test it on a temp project
+** how to show alt message for some text, or some link
+   for example, when I move mouse on ticket status text, there is an
+   explanation. when I move on "open", show an alt message "ticket is open,
+   owner is waiting for applies". see <data: ticket>. search alt for more ex.
+   

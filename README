@@ -49,8 +49,7 @@ find a partner easily for your class projects
     a student can view other students' availability
 
 ** implementation how-tos
-   how to do ACL for php+mysql?
-   how to send/queue email sending
+   see docs/how_to
 
 * thinkings and todos
   integrade with ut eid account login or openid login
